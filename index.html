@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+    <title>PatoMania</title>
+</head>
+<body>
+    <a-scene class="scene" embedded vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
+        <a-text font="mozillavr" color="#6C0EFF" position="-3 8 -20" scale="5 5 5" value="HeadSpace"></a-text>
+        <a-assets>
+          <img id="image" src="./assets/img/yrey.png"/>
+          <img id="circle" src="./assets/img/2.png"/>
+          <img id="x" src="./assets/img/1.png"/>
+        </a-assets>
+      <a-image click-listener src="#image" class="-" id="primeiro" position="-4 4 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="segundo" position="0 4 -20" scale="3 3 3"></a-image> 
+      <a-image click-listener src="#image" class="-" id="terceiro" position="4 4 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="quarto" position="-4 0 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="quinto"  position="0 0 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="sexto" position="4 0 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="setimo" position="-4 -4 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="oitavo" position="0 -4 -20" scale="3 3 3"></a-image>
+      <a-image click-listener src="#image" class="-" id="nono" position="4 -4 -20" scale="3 3 3"></a-image>
+      </a-entity>
+    
+    <a-entity id="rig">
+    <a-entity  cursor raycaster="far: 20; interval: 1000; objects: .clickable" camera look-controls wasd-controls>
+    <a-cursor id="cursor" raycaster fuse="true" fuse-timeout="99999999999"></a-cursor>
+    </a-entity>
+    </a-entity>
+    </a-scene>
+    
+          <script>
+    
+            alert("Bem vindo ao jogo da velha em realidade aumentada! \n\nPara jogar, basta clicar em uma das imagens e depois em outra. \n\nO primeiro a completar uma linha, ganha! \n\nBoa sorte!");
+    
+            let num = 0;
+            let cursor = document.getElementById("cursor");
+            let primeiro = document.getElementById("primeiro");
+            let segundo = document.getElementById("segundo");
+            let terceiro = document.getElementById("terceiro");
+            let quarto = document.getElementById("quarto");
+            let quinto = document.getElementById("quinto");
+            let sexto = document.getElementById("sexto");
+            let setimo = document.getElementById("setimo");
+            let oitavo = document.getElementById("oitavo");
+            let nono = document.getElementById("nono");
+    
+            setTimeout(function () {
+              cursor.setAttribute("fuse-timeout", "3000")
+            }, 20000);
+          
+    
+    AFRAME.registerComponent('click-listener', {
+      init: function () {
+        this.el.addEventListener('click', function (evt) {
+          let getSelection = () => {
+            num++;
+            let id = evt.target.id;
+            return id;
+          }
+          let space = document.getElementById(getSelection());
+    
+          if (num == 9) {
+            alert("Deu velha!");
+            location.reload();
+          }
+    
+          if (space.getAttribute("id") == "circle" || space.getAttribute("id") == "x") {
+            alert("já clicado :(");
+            num--;
+            return;
+          } else if (num % 2 == 0) {
+            space.setAttribute("src", "#circle");
+            space.setAttribute("id" , "circle");
+            space.setAttribute("class" , "circle");
+            console.log(space.getAttribute("class"));
+          } else {
+            space.setAttribute("src", "#x");
+            space.setAttribute("id" , "x");
+            space.setAttribute("class" , "x");
+            console.log(space.getAttribute("class"));
+          }
+    
+          if (primeiro.getAttribute("class") == "circle" && segundo.getAttribute("class") == "circle" && terceiro.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (primeiro.getAttribute("class") == "x" && segundo.getAttribute("class") == "x" && terceiro.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (quarto.getAttribute("class") == "circle" && quinto.getAttribute("class") == "circle" && sexto.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (quarto.getAttribute("class") == "x" && quinto.getAttribute("class") == "x" && sexto.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (setimo.getAttribute("class") == "circle" && oitavo.getAttribute("class") == "circle" && nono.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (setimo.getAttribute("class") == "x" && oitavo.getAttribute("class") == "x" && nono.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (primeiro.getAttribute("class") == "circle" && quarto.getAttribute("class") == "circle" && setimo.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (primeiro.getAttribute("class") == "x" && quarto.getAttribute("class") == "x" && setimo.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (segundo.getAttribute("class") == "circle" && quinto.getAttribute("class") == "circle" && oitavo.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (segundo.getAttribute("class") == "x" && quinto.getAttribute("class") == "x" && oitavo.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (terceiro.getAttribute("class") == "circle" && sexto.getAttribute("class") == "circle" && nono.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (terceiro.getAttribute("class") == "x" && sexto.getAttribute("class") == "x" && nono.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (primeiro.getAttribute("class") == "circle" && quinto.getAttribute("class") == "circle" && nono.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (primeiro.getAttribute("class") == "x" && quinto.getAttribute("class") == "x" && nono.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          } else if (terceiro.getAttribute("class") == "circle" && quinto.getAttribute("class") == "circle" && setimo.getAttribute("class") == "circle") {
+            alert("O ganhou :)");
+            restart();
+          } else if (terceiro.getAttribute("class") == "x" && quinto.getAttribute("class") == "x" && setimo.getAttribute("class") == "x") {
+            alert("X ganhou :)");
+            restart();
+          }
+        });
+      }
+    });
+          function restart() {
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          }
+          </script>
+</body>
+</html>
