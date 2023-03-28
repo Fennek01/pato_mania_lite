@@ -10,6 +10,13 @@
     <title>PatoMania</title>
 </head>
 <body>
+
+    <style>
+            .Barraca {
+                
+            }
+    </style>
+
     <a-scene class="scene" embedded vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
         <a-assets>
           <img id="PatoReal←" src="./assets/img/←PatoReal.PNG"/>
@@ -23,15 +30,21 @@
           <img id="FundoCamada1" src="./assets/img/FundoCamada1.PNG"/>
           <img id="FundoCamada2" src="./assets/img/FundoCamada2.PNG"/>
         </a-assets>
-
+    <a-entity>
         <a-image click-listener src="#FundoBase" class="Barraca" id="Barraca" position="0 5 -11.4" scale="12 12 12"></a-image>
-        <a-image click-listener src="#PatoRipper→" class="Barraca" id="Barraca" position="-2 5.8 -11.1" scale="3 3 3"></a-image>
-        <a-image click-listener src="#PatoFilhote←" class="Barraca" id="Barraca" position="2 5.8 -10.8" scale="3 3 3"></a-image>
-        <a-image click-listener src="#FundoCamada1" class="Barraca" id="Barraca" position="0 5 -10.6" scale="12 12 12"></a-image>
-        <a-image click-listener src="#PatoReal→" class="Barraca" id="Barraca" position="0 3.8 -10.3" scale="3 3 3"></a-image>
-        <a-image click-listener src="#FundoCamada2" class="Barraca" id="Barraca" position="0 5 -10.1" scale="12 12 12"></a-image>
-        <a-image click-listener src="#FundoBarraca" class="Barraca" id="Barraca" position="0 5 -9.8" scale="12 12 12"></a-image>
-
+        <a-entity position="-2 5.8 -11.1" animation="property: position; to: {x: 200, y: 0, z: 0}; loop: true; dur: 10000">
+            <a-image click-listener src="#PatoRipper→" class="PatoRipper→" id="Barraca" position="" scale="3 3 3"></a-image>
+        </a-entity>
+        <a-image click-listener src="#PatoFilhote←" class="PatoFilhote←" id="Barraca" position="2 5.8 -10.8" scale="3 3 3"></a-image>
+        <a-image click-listener src="#FundoCamada1" class="FundoCamada1" id="Barraca" position="0 5 -10.6" scale="12 12 12"></a-image>
+        <a-image click-listener src="#PatoReal→" class="PatoReal→" id="Barraca" position="0 3.8 -10.3" scale="3 3 3"></a-image>
+        <a-image click-listener src="#FundoCamada2" class="FundoCamada2" id="Barraca" position="0 5 -10.1" scale="12 12 12"></a-image>
+        <a-image click-listener src="#FundoBarraca" class="FundoBarraca" id="Barraca" position="0 5 -9.8" scale="12 12 12"></a-image>
+    </a-entity>
     </a-scene>
+
+
+
+
 </body>
 </html>
