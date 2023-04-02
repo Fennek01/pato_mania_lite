@@ -40,9 +40,18 @@
 
     
 
-    <a-button id="PatoReal" class="link" src="#PatoReal←" width="0.5" height="0.5" position="0 0 0" scale="0.1 0.1 0.1" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__mouseenter="_event: mouseenter; color: springgreen" event-set__mouseleave="_event: mouseleave; color: black" raycaster="objects: .link" sound="src: #click-sound; on: click" visible="true" >
-        <a-image id="PatoReal" src="#PatoReal→" width="0.5" height="0.5" position="0 0 0" scale="0.1 0.1 0.1" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__mouseenter="_event: mouseenter; color: springgreen" event-set__mouseleave="_event: mouseleave; color: black" raycaster="objects: .link" sound="src: #click-sound; on: click" visible="true" ></a-image>
-      </a-button>
+        <a-gui-flex-container 
+        flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="3.5" height="4.5" 
+        panel-color="#072B73" 
+        panel-rounded="0.2"
+        position="0 2.5 -6" rotation="0 0 0">
+        <a-gui-button></a-gui-button>
+        <a-gui-button></a-gui-button>
+        <a-gui-button></a-gui-button>
+
+    
+    </a-gui-flex-container>
+    
 
       <a-entity id="main-camera-wrapper">
         <a-camera id="main-camera">
