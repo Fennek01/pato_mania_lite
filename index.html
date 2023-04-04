@@ -47,7 +47,7 @@
 	font-family="assets/fonts/PermanentMarker-Regular.ttf"				
 	margin="0 0 0.1 0"
   toggle="true"
-  onclick="this.toggle()"
+  onclick="onTimerClick()"
 >
 </a-gui-circle-timer>
     </a-gui-flex-container>
@@ -72,6 +72,15 @@
     </a-scene>
 
     <script>
+
+      function onTimerClick() {
+        let timer = document.querySelector('a-gui-circle-timer');
+        if (timer.getAttribute('toggle') === 'true') {
+          timer.setAttribute('toggle', 'false');
+        } else {
+          timer.setAttribute('toggle', 'true');
+        }
+      }
 
         let mandarim = document.getElementById('Mandarim');
         let filhote = document.getElementById('Filhote');
