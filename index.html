@@ -41,9 +41,9 @@
         
 
     <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="6.5" height="8.5" panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
-    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 2.2 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
-    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 1.4 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
-    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 0.6 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction1()" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 2.2 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction2()" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 1.4 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+    <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26" border-color="#c8272c" width="1.5"  height="0.5"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction3()" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 0.6 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
 
     
 
@@ -64,6 +64,18 @@
     </a-scene>
 
     <script>
+
+        function buttonActionFunction1() {
+            alert("Você clicou no botão 1");
+        }
+
+        function buttonActionFunction2() {
+            alert("Você clicou no botão 2");
+        }
+
+        function buttonActionFunction3() {
+            alert("Você clicou no botão 3");
+        }
 
         let mandarim = document.getElementById('Mandarim');
         let filhote = document.getElementById('Filhote');
