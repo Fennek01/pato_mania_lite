@@ -40,19 +40,11 @@
 
         
 
-    <a-gui-flex-container flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="3.5" height="4.5" panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -7" rotation="0 0 0">
-      <a-gui-circle-timer
-	height="0.75"
-	count-down="60"
-	font-family="assets/fonts/PermanentMarker-Regular.ttf"				
-	margin="0 0 0.1 0"
-  toggle="true"
-  onclick="onTimerClick()"
->
-</a-gui-circle-timer>
-    </a-gui-flex-container>
-    
-    
+    <a-gui-flex-container flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="4.5" height="4.5" panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -7" rotation="0 0 0"></a-gui-flex-container>
+    <a-gui-button width="2.5"  height="0.7"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 0 -5" font-size="0.25" margin="0 0 0.05 0"></a-gui-button>
+    <a-gui-button width="2.5"  height="0.7"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 1 -5" font-size="0.25" margin="0 0 0.05 0"></a-gui-button>
+    <a-gui-button width="2.5"  height="0.7"  base-depth="0.025"  depth="0.1" gap="0.1" border-radius="1" onclick="buttonActionFunction" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" position="0 2 -5" font-size="0.25" margin="0 0 0.05 0"></a-gui-button>
+
     
 
       <a-entity id="main-camera-wrapper">
@@ -73,14 +65,10 @@
 
     <script>
 
-      function onTimerClick() {
-        let timer = document.querySelector('a-gui-circle-timer');
-        if (timer.getAttribute('toggle') === 'true') {
-          timer.setAttribute('toggle', 'false');
-          timer.setAttribute('count-down', '50');
-        } else {
-          timer.setAttribute('toggle', 'true');
-        }
+
+
+      function buttonActionFunction() {
+
       }
 
         let mandarim = document.getElementById('Mandarim');
