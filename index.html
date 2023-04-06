@@ -60,25 +60,16 @@
 
       <a-entity id="Telepata" visible="false">
         <a-image click-listener src="#FundoBase" class="Barraca" id="Barraca" position="0 0 -16.8" scale="12 12 12"></a-image>
-
-        <!-- Entidades -->
         <a-entity position="-2 0.5 -16" id="Mandarim" animation="property: position; to: 4.5 0.5 -16; dur: 6000; easing: linear; dur: 6000">
             <a-image click-listener src="#PatoMandarim→" class="PatoRipper→" scale="3 3 3"></a-image>
         </a-entity>
-
         <a-entity position="2 0.5 -15" id="Filhote" animation="property: position; to: 4.5 0.5 -15; easing: linear; dur: 6000">
             <a-image click-listener src="#PatoFilhote←" class="PatoFilhote←" id="Barraca" scale="3 3 3"></a-image>
         </a-entity>
-        <!-- Entidades -->
-
         <a-image click-listener src="#FundoCamada1" class="FundoCamada1" id="Barraca" position="0 0 -14.6" scale="12 12 12"></a-image>
-
-        <!-- Entidades -->
         <a-entity id="PatoReal" position="2.5 -1.3 -14.2" id="PatoReal" animation="property: position; to: -4.5 -1.3 -14.2; dur: 7000; easing: linear; dur: 7000">
             <a-image click-listener src="#PatoReal←" class="PatoReal→"  scale="3 3 3"></a-image>
         </a-entity>
-        <!-- Entidades -->
-
         <a-image click-listener src="#FundoCamada2" class="FundoCamada2" id="Barraca" position="0 0 -13.6" scale="12 12 12"></a-image>
         <a-image click-listener src="#FundoBarraca" class="FundoBarraca" id="Barraca" position="0 0 -13" scale="12 12 12"></a-image>  
       </a-entity>
@@ -110,7 +101,7 @@
 
       function initTelepata() {
         document.getElementById('menuFases').setAttribute("visible", "false");
-        const pato = document.createElement('entity').setAttribute('src', '#PatoMandarim→');
+        const pato = document.createElement('a-image').setAttribute("click-listener", "src: #PatoReal←; class: PatoReal→; scale: 3 3 3")
         pato.setAttribute("position", "-2 0.5 -16");
       }
 
