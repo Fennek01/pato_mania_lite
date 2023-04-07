@@ -147,13 +147,18 @@
               filhote1.setAttribute("visible", "false");
               }, 3000);
           }, 1000); 
-
+        }
+        
 // ----------------------------------Rodada2--------------------------------------------- //
 
 
-          
-
+    AFRAME.registerComponent('click-listener', {
+      init: function () {
+        this.el.addEventListener('click', function (evt) {
+          console.log('I was clicked at: ', evt.detail.intersection.point);
+        });
       }
+    });
 
       function closeMenuFases() {
         document.getElementById('menuFases').setAttribute("visible", "false");
