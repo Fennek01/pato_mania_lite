@@ -68,8 +68,8 @@
         <a-entity position="-2 0.5 -16" id="Mandarim1" animation="">
             <a-image click-listener src="#PatoMandarim→" class="PatoRipper→" scale="3 3 3"></a-image>
         </a-entity>
-        <a-entity position="2 0.5 -15" id="Filhote1" animation="">
-            <a-image click-listener src="#PatoFilhote←" class="PatoFilhote←" id="Barraca" scale="3 3 3"></a-image>
+        <a-entity click-listener position="2 0.5 -15" id="Filhote1" animation="">
+            <a-image src="#PatoFilhote←" class="PatoFilhote←" id="Barraca" scale="3 3 3"></a-image>
         </a-entity>
         <a-entity position="-3 0.5 -15" id="Filhote" animation="">
           <a-image click-listener src="#PatoFilhote←" class="PatoFilhote←" id="Barraca" scale="3 3 3"></a-image>
@@ -159,7 +159,7 @@
     AFRAME.registerComponent('click-listener', {
       init: function () {
         this.el.addEventListener('click', function (evt) {
-          console.log('I was clicked at: ', evt.detail.intersection.point);
+          alert("Clicado")
         });
       }
     });
