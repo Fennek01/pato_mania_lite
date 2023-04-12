@@ -23,7 +23,6 @@
         
         <a-assets>
           <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-          <img id="FundoBarraca" src="./assets/img/FundoBarraca.png"/>
           <img id="PatoReal←" src="./assets/img/←PatoReal.PNG"/>
           <img id="PatoReal→" src="./assets/img/→PatoReal.PNG"/>
           <img id="PatoFilhote←" src="./assets/img/←PatoFilhote.PNG"/>
@@ -40,6 +39,7 @@
           <img id="ParteInferiorBarraca" src="./assets/img/ParteInferiorBarraca.png"/>
           <img id="CenarioUm" src="./assets/img/CenarioUm.png"/>
           <img id="CenarioDois" src="./assets/img/CenarioDois.png"/>
+          <img id="FundoBarraca" src="./assets/img/FundoBarraca.png"/>
           <img id="mira" src="./assets/img/mira.png"/>
         </a-assets>
 
@@ -62,7 +62,7 @@
       </a-entity>
 
       <a-entity id="Telepata" position="0 0.8 50" visible="false">
-        <a-image click-listener src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -16.8" scale="12 12 12"></a-image>
+        <a-image click-listener src="#mira" class="Barraca" id="Barraca" position="0 1 -16.8" scale="12 12 12"></a-image>
 
 
         <a-entity position="-2 0.5 -16" id="Mandarim1" animation="">
