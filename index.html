@@ -65,23 +65,17 @@
         <a-image src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -16.8" scale="12 12 12"></a-image>
 
 
-        <a-entity click-listener position="-2 0.5 -16" id="Mandarim1" class="Mandarim" animation="">
-            <a-image src="#PatoMandarim→" class="PatoRipper→" id="Mandarim" scale="3 3 3"></a-image>
-        </a-entity>
-        <a-entity click-listener position="2 0.5 -15" id="Filhote1" class="Filhote" animation="">
-            <a-image src="#PatoFilhote←" class="PatoFilhote←" scale="3 3 3"></a-image>
-        </a-entity>
-        <a-entity click-listener position="-3 0.5 -15" id="Filhote1" class="Filhote" animation="">
-          <a-image src="#PatoFilhote←" class="PatoFilhote←" scale="3 3 3"></a-image>
-      </a-entity>
+          <a-image click-listener position="-2 0.5 -16" id="Mandarim1" src="#PatoMandarim→" class="PatoRipper→" animation=""  scale="3 3 3"></a-image>
 
-        
+          <a-image  click-listener position="2 0.5 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
+
+          <a-image click-listener position="-3 0.5 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
+
+
         <a-image src="#CenarioUm" class="CenarioUm" id="Barraca" position="0 -4.2 -14.6" scale="12 12 12"></a-image>
         
 
-        <a-entity click-listener id="PatoReal1" position="2.5 -1.3 -14.2" class="PatoReal" animation="">
-            <a-image src="#PatoReal←" class="PatoReal→"  scale="3 3 3"></a-image>
-        </a-entity>
+            <a-image click-listener position="2.5 -1.3 -14.2" src="#PatoReal←" id="PatoReal1" class="PatoReal→" animation="" scale="3 3 3"></a-image>
 
 
         <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.6" scale="12 12 12"></a-image>
@@ -154,16 +148,37 @@
         
 // ----------------------------------Rodada2--------------------------------------------- //
 
-    let porntuacao = 0;
+    let pontuacao = 0;
 
     AFRAME.registerComponent('click-listener', {
       init: function () {
         this.el.addEventListener('click', function (evt) {
-          porntuacao = porntuacao + 1;
-          console.log(porntuacao);
+          let getSelection = () => {
+            let id = evt.target.id;
+            return id;
+          }
+          
+          let pato = document.getElementById(getSelection());
+          let patoId = pato.getAttribute("id");
+
+          const patoNew = patoId.replace('1','').replace('2','').replace('3','').replace('4','').replace('5','').replace('6','').replace('7','').replace('8','').replace('9','').replace('0','');
+          console.log(patoNew)
+
+          if (patoNew == 'PatoReal') {
+            pontuacao = pontuacao + 10;
+            console.log(pontuacao);
+          } else if (patoNew == 'Mandarim') {
+            pontuacao = pontuacao + 15;
+            console.log(pontuacao);
+          } else if (patoNew == 'Filhote') {
+            pontuacao = pontuacao + 20;
+            console.log(pontuacao);
+          }
         });
       }
     });
+
+    
 
       function closeMenuFases() {
         document.getElementById('menuFases').setAttribute("visible", "false");
