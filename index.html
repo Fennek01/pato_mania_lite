@@ -44,6 +44,7 @@
         </a-assets>
 
         
+
       <a-entity id="inicial" position="0 0 0">
           <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="6.5" height="6.5" panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
           <a-text position="-0.65 2 -4" color="#f4dacb" value="PATOMANIA"></a-text> 
@@ -85,7 +86,7 @@
 
       <a-entity id="main-camera-wrapper">
         <a-camera id="main-camera">
-        <a-gui-cursor visible="false" fuse="false" raycaster="objects: [gui-interactable]" fuse="false" color="#ff0000" hover-color="#ff0000" active-color="#ff0000" design="cross">
+        <a-gui-cursor visible="false" fuse-timeout="9999999" fuse="false" raycaster="objects: [gui-interactable]" fuse="false" color="#ff0000" hover-color="#ff0000" active-color="#ff0000" design="cross">
         </a-gui-cursor> 
         </a-camera>
       </a-entity>
