@@ -65,17 +65,17 @@
         <a-image src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -16.8" scale="12 12 12"></a-image>
 
 
-          <a-image click-listener position="-2 0.5 -16" id="Mandarim1" src="#PatoMandarim→" class="PatoRipper→" animation=""  scale="3 3 3"></a-image>
+          <a-image click-listener position="-2 2 -16" id="Mandarim1" src="#PatoMandarim→" class="PatoRipper→" animation=""  scale="3 3 3"></a-image>
 
-          <a-image  click-listener position="2 0.5 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
+          <a-image  click-listener position="2 2 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
 
-          <a-image click-listener position="-3 0.5 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
+          <a-image click-listener position="-3 2 -15" id="Filhote1" src="#PatoFilhote←" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
 
 
         <a-image src="#CenarioUm" class="CenarioUm" id="Barraca" position="0 -4.2 -14.6" scale="12 12 12"></a-image>
         
 
-            <a-image click-listener position="2.5 -1.3 -14.2" src="#PatoReal←" id="PatoReal1" class="PatoReal→" animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 -14.2" src="#PatoReal←" id="PatoReal1" class="PatoReal→" animation="" scale="3 3 3"></a-image>
 
 
         <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.6" scale="12 12 12"></a-image>
@@ -107,6 +107,20 @@
 
     <script>
 
+      function closeMenuFases() {
+        document.getElementById('menuFases').setAttribute("visible", "false");
+        document.getElementById('menuFases').setAttribute("position", "0 10 14");
+        document.getElementById('inicial').setAttribute("position", "0 0 0");
+        document.getElementById('inicial').setAttribute("visible", "true");
+      }
+
+      function openMenuFases() {
+        document.getElementById('inicial').setAttribute("visible", "false");
+        document.getElementById('inicial').setAttribute("position", "0 0.8 14");
+        document.getElementById('menuFases').setAttribute("position", "0 0 0");
+        document.getElementById('menuFases').setAttribute("visible", "true");
+      }
+
       function initTelepata() {
         document.getElementById('menuFases').setAttribute("position", "0 0.8 14");
         document.getElementById('menuFases').setAttribute("visible", "false");
@@ -124,21 +138,21 @@
 // ----------------------------------Rodada1--------------------------------------------- //
 
         setTimeout(function () {
-          patoreal1.setAttribute("animation", "property: position; to: -4.5 -1.3 -14.2; easing: linear; dur: 4000;")
+          patoreal1.setAttribute("animation", "property: position; to: -4.5 0.8 -14.2; easing: linear; dur: 4000;")
           patoreal1.setAttribute("visible", "true");
             setTimeout(function () {
               patoreal1.setAttribute("visible", "false");
               }, 4000);
           }, 1000);
         setTimeout(function () {
-          mandarim1.setAttribute("animation", "property: position; to: 4.5 0.5 -16; easing: linear; dur: 4000")
+          mandarim1.setAttribute("animation", "property: position; to: 4.5 2 -16; easing: linear; dur: 4000")
           mandarim1.setAttribute("visible", "true");
             setTimeout(function () {
               mandarim1.setAttribute("visible", "false");
               }, 4000);
           }, 1000);
         setTimeout(function () {
-          filhote1.setAttribute("animation", "property: position; to: 4.5 0.5 -15; easing: linear; dur: 3000")
+          filhote1.setAttribute("animation", "property: position; to: 4.5 2 -15; easing: linear; dur: 3000")
           filhote1.setAttribute("visible", "true");
             setTimeout(function () {
               filhote1.setAttribute("visible", "false");
@@ -166,33 +180,17 @@
 
           if (patoNew == 'PatoReal') {
             pontuacao = pontuacao + 10;
-            console.log(pontuacao);
+            alert(pontuacao);
           } else if (patoNew == 'Mandarim') {
             pontuacao = pontuacao + 15;
-            console.log(pontuacao);
+            alert(pontuacao);
           } else if (patoNew == 'Filhote') {
             pontuacao = pontuacao + 20;
-            console.log(pontuacao);
+            alert(pontuacao);
           }
         });
       }
     });
-
-    
-
-      function closeMenuFases() {
-        document.getElementById('menuFases').setAttribute("visible", "false");
-        document.getElementById('menuFases').setAttribute("position", "0 10 14");
-        document.getElementById('inicial').setAttribute("position", "0 0 0");
-        document.getElementById('inicial').setAttribute("visible", "true");
-      }
-
-      function openMenuFases() {
-        document.getElementById('inicial').setAttribute("visible", "false");
-        document.getElementById('inicial').setAttribute("position", "0 0.8 14");
-        document.getElementById('menuFases').setAttribute("position", "0 0 0");
-        document.getElementById('menuFases').setAttribute("visible", "true");
-      }
 
     </script>
 
