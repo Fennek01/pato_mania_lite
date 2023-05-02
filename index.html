@@ -33,6 +33,8 @@
           <img id="PatoMandarim→" src="./assets/img/→PatoMandarim.PNG"/>
           <img id="Ornitorrinco←" src="./assets/img/←Ornitorrinco.PNG"/>
           <img id="Ornitorrinco→" src="./assets/img/→Ornitorrinco.PNG"/>
+          <img id="PatoCinzento←" src="./assets/img/←PatoCinzento.PNG"/>
+          <img id="PatoCinzento→" src="./assets/img/→PatoCinzento.PNG"/>
           <img id="BarraDireita" src="./assets/img/BarraDireita.png"/>
           <img id="BarraEsquerda" src="./assets/img/BarraEsquerda.png"/>
           <img id="ParteSuperiorBarraca" src="./assets/img/ParteSuperiorBarraca.png"/>
@@ -81,7 +83,8 @@
             <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote→" id="PatoFilhote1" class="PatoFilhote→" animation="" scale="3 3 3"></a-image>
             <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco←" id="Ornitorrinco1" class="Ornitorrinco←" animation="" scale="3 3 3"></a-image>
             <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco→" id="Ornitorrinco2" class="Ornitorrinco←" animation="" scale="3 3 3"></a-image>
-
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzento1" class="PatoCinzento←" animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento→" id="PatoCinzento2" class="PatoCinzento→" animation="" scale="3 3 3"></a-image>
 
         <a-image src="#CenarioUm" class="CenarioUm" id="Barraca" position="0 -4.2 -14.6" scale="12 12 12"></a-image>
         
@@ -101,6 +104,9 @@
             <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote→" id="PatoFilhote2" class="PatoFilhote→" animation="" scale="3 3 3"></a-image>
             <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhote3" class="PatoFilhote←" animation="" scale="3 3 3"></a-image>
             <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco←" id="Ornitorrinco3" class="Ornitorrinco←" animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzento3" class="PatoCinzento←" animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento→" id="PatoCinzento4" class="PatoCinzento→" animation="" scale="3 3 3"></a-image>
+
 
 
         <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.6" scale="12 12 12"></a-image>
@@ -186,6 +192,10 @@
         let Ornitorrinco1 = document.getElementById('Ornitorrinco1');
         let Ornitorrinco2 = document.getElementById('Ornitorrinco2');
         let Ornitorrinco3 = document.getElementById('Ornitorrinco3');
+        let patoCinzento1 = document.getElementById('PatoCinzento1');
+        let patoCinzento2 = document.getElementById('PatoCinzento2');
+        let patoCinzento3 = document.getElementById('PatoCinzento3');
+        let patoCinzento4 = document.getElementById('PatoCinzento4');
 
         patoreal1.setAttribute("visible", "false");
         patoreal2.setAttribute("visible", "false");
@@ -217,6 +227,10 @@
         Ornitorrinco1.setAttribute("visible", "false");
         Ornitorrinco2.setAttribute("visible", "false");
         Ornitorrinco3.setAttribute("visible", "false");
+        patoCinzento1.setAttribute("visible", "false");
+        patoCinzento2.setAttribute("visible", "false");
+        patoCinzento3.setAttribute("visible", "false");
+        patoCinzento4.setAttribute("visible", "false");
 
         startTimer(45);
         function startTimer(duration)  {
@@ -236,34 +250,167 @@
 // ----------------------------------Rodada1--------------------------------------------- //
 
         setTimeout(function () {
-          patoreal1.setAttribute("position", "2.5 2.3 -15")
+          patoreal1.setAttribute("position", "3.5 2.3 -15")
           patoreal1.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
           patoreal1.setAttribute("visible", "true");
             setTimeout(function () {
               patoreal1.setAttribute("visible", "false");
               }, 4000);
-          }, 1000);
+          }, 1500);
           setTimeout(function () {
-            patoreal5.setAttribute("position", "2.5 1 -14.2")
-            patoreal5.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 4000;")
-            patoreal5.setAttribute("visible", "true");
+            patoreal7.setAttribute("position", "-4.5 1 -14.2")
+            patoreal7.setAttribute("animation", "property: position; to: 3.5 1 -14.2; easing: linear; dur: 4000;")
+            patoreal7.setAttribute("visible", "true");
             setTimeout(function () {
-              patoreal5.setAttribute("visible", "false");
+              patoreal7.setAttribute("visible", "false");
               }, 4000);
           }, 1000);
           setTimeout(function () {
-            patoreal5.setAttribute("position", "2.5 1 -14.2")
-            patoreal5.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 4000;")
-            patoreal5.setAttribute("visible", "true");
+            patomandarim3.setAttribute("position", "-4.5 2.3 -15")
+            patomandarim3.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 3000;")
+            patomandarim3.setAttribute("visible", "true");
             setTimeout(function () {
-              patoreal5.setAttribute("visible", "false");
-              }, 4000);
+              patomandarim3.setAttribute("visible", "false");
+              }, 3000);
+          }, 2500);
+          setTimeout(function () {
+            patofilhote2.setAttribute("position", "3.5 1 -14.2")
+            patofilhote2.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 3000;")
+            patofilhote2.setAttribute("visible", "true");
+            setTimeout(function () {
+              patofilhote2.setAttribute("visible", "false");
+              }, 3000);
           }, 1000);
-        }
+
+          // ----------------------------------Rodada2--------------------------------------------- //
+
+          setTimeout(function () {
+          patomandarim1.setAttribute("position", "3.5 2.3 -15")
+          patomandarim1.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
+          patomandarim1.setAttribute("visible", "true");
+            setTimeout(function () {
+              patomandarim1.setAttribute("visible", "false");
+              }, 4000);
+          }, 7000);
+          setTimeout(function () {
+            patoripper7.setAttribute("position", "-4.5 1 -14.2")
+            patoripper7.setAttribute("animation", "property: position; to: 3.5 1 -14.2; easing: linear; dur: 4000;")
+            patoripper7.setAttribute("visible", "true");
+            setTimeout(function () {
+              patoripper7.setAttribute("visible", "false");
+              }, 4000);
+          }, 8000);
+          setTimeout(function () {
+            patoreal3.setAttribute("position", "-4.5 2.3 -15")
+            patoreal3.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 4000;")
+            patoreal3.setAttribute("visible", "true");
+            setTimeout(function () {
+              patoreal3.setAttribute("visible", "false");
+              }, 4000);
+          }, 7000);
+
+          // ----------------------------------Rodada3--------------------------------------------- //
+
+          setTimeout(function () {
+            patoreal2.setAttribute("position", "3.5 2.3 -15")
+            patoreal2.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
+            patoreal2.setAttribute("visible", "true");
+              setTimeout(function () {
+                patoreal2.setAttribute("visible", "false");
+                }, 4000);
+            }, 13000);
+            setTimeout(function () {
+              patomandarim4.setAttribute("position", "-4.5 2.3 -15")
+              patomandarim4.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 4000;")
+              patomandarim4.setAttribute("visible", "true");
+              setTimeout(function () {
+                patomandarim4.setAttribute("visible", "false");
+                }, 4000);
+            }, 13000);
+            setTimeout(function () {
+              patofilhote3.setAttribute("position", "3.5 1 -14.2")
+              patofilhote3.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 4000;")
+              patofilhote3.setAttribute("visible", "true");
+              setTimeout(function () {
+                patofilhote3.setAttribute("visible", "false");
+                }, 4000);
+            }, 13000);
+
+            // ----------------------------------Rodada4--------------------------------------------- //
+
+            setTimeout(function () {
+              patomandarim2.setAttribute("position", "3.5 2.3 -15")
+              patomandarim2.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
+              patomandarim2.setAttribute("visible", "true");
+                setTimeout(function () {
+                  patomandarim2.setAttribute("visible", "false");
+                  }, 4000);
+              }, 19000);
+              setTimeout(function () {
+                patoreal5.setAttribute("position", "-4.5 2.3 -15")
+                patoreal5.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 4000;")
+                patoreal5.setAttribute("visible", "true");
+                setTimeout(function () {
+                  patoreal5.setAttribute("visible", "false");
+                  }, 4000);
+              }, 19000);
+              setTimeout(function () {
+                patoripper3.setAttribute("position", "3.5 1 -14.2")
+                patoripper3.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 4000;")
+                patoripper3.setAttribute("visible", "true");
+                setTimeout(function () {
+                  patoripper3.setAttribute("visible", "false");
+                  }, 4000);
+              }, 19000);
+              // ----------------------------------Rodada5--------------------------------------------- //
+            
+              setTimeout(function () {
+                patomandarim5.setAttribute("position", "3.5 2.3 -15")
+                patomandarim5.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
+                patomandarim5.setAttribute("visible", "true");
+                  setTimeout(function () {
+                    patomandarim5.setAttribute("visible", "false");
+                    }, 4000);
+                }, 25000);
+                setTimeout(function () {
+                  patoreal4.setAttribute("position", "-4.5 2.3 -15")
+                  patoreal4.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 4000;")
+                  patoreal4.setAttribute("visible", "true");
+                  setTimeout(function () {
+                    patoreal4.setAttribute("visible", "false");
+                    }, 4000);
+                }, 25000);
+                setTimeout(function () {
+                  patoripper5.setAttribute("position", "3.5 1 -14.2")
+                  patoripper5.setAttribute("animation", "property: position; to: -4.5 1 -14.2; easing: linear; dur: 4000;")
+                  patoripper5.setAttribute("visible", "true");
+                  setTimeout(function () {
+                    patoripper5.setAttribute("visible", "false");
+                    }, 4000);
+                }, 25000);
+                // ----------------------------------Rodada6--------------------------------------------- //
+              
+                setTimeout(function () {
+                  patomandarim6.setAttribute("position", "3.5 2.3 -15")
+                  patomandarim6.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 4000;")
+                  patomandarim6.setAttribute("visible", "true");
+                    setTimeout(function () {
+                      patomandarim6.setAttribute("visible", "false");
+                      }, 4000);
+                  }, 31000);
+                  setTimeout(function () {
+                    patoreal6.setAttribute("position", "-4.5 2.3 -15")
+                    patoreal6.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 4000;")
+                    patoreal6.setAttribute("visible", "true");
+                    setTimeout(function () {
+                      patoreal6.setAttribute("visible", "false");
+                      }, 4000);
+                  }, 31000);
+            }
         
         
         
-// ----------------------------------Rodada2--------------------------------------------- //
+
 
 
 // ----------------------------------Sistema de Click--------------------------------------------- //
@@ -277,6 +424,7 @@
           }
           
           let pato = document.getElementById(getSelection());
+          pato.setAttribute("visible", "false");
           let patoId = pato.getAttribute("id");
 
           const patoNew = patoId.replace('1','').replace('2','').replace('3','').replace('4','').replace('5','').replace('6','').replace('7','').replace('8','').replace('9','').replace('0','');
