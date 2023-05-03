@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=YES, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script type='text/javascript'
+        src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.1/dist/mindar-image.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <title>PatoMania</title>
+</head>
+
+<body>
+
+
+
+    <a-scene class="scene" embedded vr-mode-ui="enabled: false"
+        arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
+
+        <a-assets>
+            <audio id="click-sound" crossorigin="anonymous"
+                src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+            <img id="PatoReal←" src="./assets/img/←PatoReal.PNG" />
+            <img id="PatoReal→" src="./assets/img/→PatoReal.PNG" />
+            <img id="PatoFilhote←" src="./assets/img/←PatoFilhote.PNG" />
+            <img id="PatoFilhote→" src="./assets/img/→PatoFilhote.PNG" />
+            <img id="PatoRipper←" src="./assets/img/←PatoRipper.PNG" />
+            <img id="PatoRipper→" src="./assets/img/→PatoRipper.PNG" />
+            <img id="PatoMandarim←" src="./assets/img/←PatoMandarim.PNG" />
+            <img id="PatoMandarim→" src="./assets/img/→PatoMandarim.PNG" />
+            <img id="Ornitorrinco←" src="./assets/img/←Ornitorrinco.PNG" />
+            <img id="Ornitorrinco→" src="./assets/img/→Ornitorrinco.PNG" />
+            <img id="PatoCinzento←" src="./assets/img/←PatoCinzento.PNG" />
+            <img id="PatoCinzento→" src="./assets/img/→PatoCinzento.PNG" />
+            <img id="BarraDireita" src="./assets/img/BarraDireita.png" />
+            <img id="BarraEsquerda" src="./assets/img/BarraEsquerda.png" />
+            <img id="ParteSuperiorBarraca" src="./assets/img/ParteSuperiorBarraca.png" />
+            <img id="ParteInferiorBarraca" src="./assets/img/ParteInferiorBarraca.png" />
+            <img id="CenarioUm" src="./assets/img/CenarioUm.png" />
+            <img id="CenarioDois" src="./assets/img/CenarioDois.png" />
+            <img id="FundoBarraca" src="./assets/img/FundoBarraca.PNG" />
+            <img id="mira" src="./assets/img/mira.png" />
+        </a-assets>
+
+
+
+        <a-entity id="inicial" position="0 0 0">
+            <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center"
+                align-items="normal" component-padding="0.1" opacity="0.7" width="6.5" height="6.5"
+                panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
+            <a-text position="-0.65 2 -4" color="#f4dacb" value="PATOMANIA"></a-text>
+            <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26"
+                border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025" depth="0.1" gap="0.1"
+                border-radius="1" onclick="openMenuFases()" value="FASES" position="0 1.4 -4" font-size="0.1"
+                margin="0 0 0.05 0"></a-gui-button>
+            <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26"
+                border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025" depth="0.1" gap="0.1"
+                border-radius="1" onclick="openScore()" value="PONTUAÇÕES" position="0 0.8 -4" font-size="0.1"
+                margin="0 0 0.05 0"></a-gui-button>
+        </a-entity>
+
+        <a-entity id="menuFases" position="0 10 14" visible="false">
+            <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center"
+                align-items="normal" component-padding="0.1" opacity="0.7" width="6.5" height="9.5"
+                panel-color="#072B73" panel-rounded="0.2" position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
+            <a-text position="-0.3 2.4 -4" color="#f4dacb" value="Fases"></a-text>
+            <a-gui-button id="menuFases" active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb"
+                background-color="#DE4F26" border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025"
+                depth="0.1" gap="0.1" border-radius="1" onclick="initTelepata()" value="1 - Telepata"
+                position="0 1.8 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+            <a-gui-button id="menuFases" active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb"
+                background-color="#DE4F26" border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025"
+                depth="0.1" gap="0.1" border-radius="1" onclick="initPsicopata()" value="2 - Psicopata"
+                position="0 1.2 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+            <a-gui-button id="menuFases" active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb"
+                background-color="#DE4F26" border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025"
+                depth="0.1" gap="0.1" border-radius="1" onclick="initPatocidio()" value="3 - Patocidio!"
+                position="0 0.6 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+            <a-gui-icon-button height="0.2" onclick="closeMenuFases()" icon="a" margin="0 0 0.05 0"
+                border-color="#DE4F26" background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
+                position="0.7 2.5 -4"></a-gui-icon-button>
+            <a-text height="2.5" width="2.5" position="0.48 2.28 -3" color="#f4dacb" value="X"></a-text>
+        </a-entity>
+
+        <a-entity id="Telepata" position="0 0.8 50" visible="false">
+            <a-image src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -16.8" scale="12 12 12"></a-image>
+
+
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoReal1" class="PatoReal→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoReal2" class="PatoReal→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoReal3" class="PatoReal←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoReal4" class="PatoReal←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipper2" class="PatoRipper←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper→" id="PatoRipper3" class="PatoRipper→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper→" id="PatoRipper4" class="PatoRipper→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarim1" class="PatoMandarim←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarim2" class="PatoMandarim←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim→" id="PatoMandarim3" class="PatoMandarim→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim→" id="PatoMandarim4" class="PatoMandarim→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco←" id="Ornitorrinco1" class="Ornitorrinco←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco→" id="Ornitorrinco2" class="Ornitorrinco←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzento1" class="PatoCinzento←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento→" id="PatoCinzento2" class="PatoCinzento→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarim6" class="PatoMandarim←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoReal5" class="PatoReal→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoReal6" class="PatoReal→"
+                animation="" scale="3 3 3"></a-image>
+
+
+
+            <a-image src="#CenarioUm" class="CenarioUm" id="Barraca" position="0 -4.2 -14.6" scale="12 12 12"></a-image>
+
+
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoReal7" class="PatoReal←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoReal8" class="PatoReal←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipper1" class="PatoRipper←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipper5" class="PatoRipper←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipper6" class="PatoRipper←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper→" id="PatoRipper7" class="PatoRipper→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoRipper→" id="PatoRipper8" class="PatoRipper→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarim5" class="PatoMandarim←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarim7" class="PatoMandarim→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim→" id="PatoMandarim8" class="PatoMandarim→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote→" id="PatoFilhote2" class="PatoFilhote→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhote3" class="PatoFilhote←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco←" id="Ornitorrinco3" class="Ornitorrinco←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzento3" class="PatoCinzento←"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento→" id="PatoCinzento4" class="PatoCinzento→"
+                animation="" scale="3 3 3"></a-image>
+            <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote→" id="PatoFilhote1" class="PatoFilhote→"
+                animation="" scale="3 3 3"></a-image>
+
+
+
+            <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.6"
+                scale="12 12 12"></a-image>
+            <a-image src="#ParteInferiorBarraca" class="FundoBarraca" id="Barraca" position="0 -6 -13"
+                scale="12 12 12"></a-image>
+            <a-image src="#ParteSuperiorBarraca" class="ParteSuperiorBarraca" id="Barraca" position="-0.1 9 -14"
+                scale="12 12 12"></a-image>
+        </a-entity>
+
+        <a-entity id="main-camera-wrapper">
+            <a-camera id="main-camera">
+                <a-gui-cursor visible="false" fuse-timeout="9999999" fuse="false"
+                    raycaster="objects: [gui-interactable]" fuse="false" color="#ff0000" hover-color="#ff0000"
+                    active-color="#ff0000" design="cross">
+                </a-gui-cursor>
+            </a-camera>
+        </a-entity>
+
+        <a-text position="-0.65 2 -4" value=""></a-text>
+
+        <a-entity cursor="fuse: false" raycaster="objects: .clickable" id="main-camera-wrapper">
+            <a-camera id="sub-camera" visible="true">
+                <a-cursor id="fuse-cursor" material="opacity: 0;" position="0 0 -1"
+                    animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                    animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                    event-set__mouseenter="_event: mouseenter; color: springgreen"
+                    event-set__mouseleave="_event: mouseleave; color: black"></a-cursor>
+                <a-image width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
+            </a-camera>
+        </a-entity>
+
+    </a-scene>
+
+    <script>
+
+        let pontuacao = 0;
+
+        function closeMenuFases() {
+            document.getElementById('menuFases').setAttribute("visible", "false");
+            document.getElementById('menuFases').setAttribute("position", "0 10 14");
+            document.getElementById('inicial').setAttribute("position", "0 0 0");
+            document.getElementById('inicial').setAttribute("visible", "true");
+        }
+
+        function openMenuFases() {
+            document.getElementById('inicial').setAttribute("visible", "false");
+            document.getElementById('inicial').setAttribute("position", "0 0.8 14");
+            document.getElementById('menuFases').setAttribute("position", "0 0 0");
+            document.getElementById('menuFases').setAttribute("visible", "true");
+        }
+
+        //---------------------------------------------Fase 1--------------------------------------------- //
+
+        function initTelepata() {
+            document.getElementById('menuFases').setAttribute("position", "0 0.8 14");
+            document.getElementById('menuFases').setAttribute("visible", "false");
+            document.getElementById('Telepata').setAttribute("position", "0 0 0");
+            document.getElementById('Telepata').setAttribute("visible", "true");
+
+            let patoreal1 = document.getElementById('PatoReal1');
+            let patoreal2 = document.getElementById('PatoReal2');
+            let patoreal3 = document.getElementById('PatoReal3');
+            let patoreal4 = document.getElementById('PatoReal4');
+            let patoreal5 = document.getElementById('PatoReal5');
+            let patoreal6 = document.getElementById('PatoReal6');
+            let patoreal7 = document.getElementById('PatoReal7');
+            let patoreal8 = document.getElementById('PatoReal8');
+            let patoripper1 = document.getElementById('PatoRipper1');
+            let patoripper2 = document.getElementById('PatoRipper2');
+            let patoripper3 = document.getElementById('PatoRipper3');
+            let patoripper4 = document.getElementById('PatoRipper4');
+            let patoripper5 = document.getElementById('PatoRipper5');
+            let patoripper6 = document.getElementById('PatoRipper6');
+            let patoripper7 = document.getElementById('PatoRipper7');
+            let patoripper8 = document.getElementById('PatoRipper8');
+            let patomandarim1 = document.getElementById('PatoMandarim1');
+            let patomandarim2 = document.getElementById('PatoMandarim2');
+            let patomandarim3 = document.getElementById('PatoMandarim3');
+            let patomandarim4 = document.getElementById('PatoMandarim4');
+            let patomandarim5 = document.getElementById('PatoMandarim5');
+            let patomandarim6 = document.getElementById('PatoMandarim6');
+            let patomandarim7 = document.getElementById('PatoMandarim7');
+            let patomandarim8 = document.getElementById('PatoMandarim8');
+            let patofilhote1 = document.getElementById('PatoFilhote1');
+            let patofilhote2 = document.getElementById('PatoFilhote2');
+            let patofilhote3 = document.getElementById('PatoFilhote3');
+            let Ornitorrinco1 = document.getElementById('Ornitorrinco1');
+            let Ornitorrinco2 = document.getElementById('Ornitorrinco2');
+            let Ornitorrinco3 = document.getElementById('Ornitorrinco3');
+            let patoCinzento1 = document.getElementById('PatoCinzento1');
+            let patoCinzento2 = document.getElementById('PatoCinzento2');
+            let patoCinzento3 = document.getElementById('PatoCinzento3');
+            let patoCinzento4 = document.getElementById('PatoCinzento4');
+
+            patoreal1.setAttribute("visible", "false");
+            patoreal2.setAttribute("visible", "false");
+            patoreal3.setAttribute("visible", "false");
+            patoreal4.setAttribute("visible", "false");
+            patoreal5.setAttribute("visible", "false");
+            patoreal6.setAttribute("visible", "false");
+            patoreal7.setAttribute("visible", "false");
+            patoreal8.setAttribute("visible", "false");
+            patoripper1.setAttribute("visible", "false");
+            patoripper2.setAttribute("visible", "false");
+            patoripper3.setAttribute("visible", "false");
+            patoripper4.setAttribute("visible", "false");
+            patoripper5.setAttribute("visible", "false");
+            patoripper6.setAttribute("visible", "false");
+            patoripper7.setAttribute("visible", "false");
+            patoripper8.setAttribute("visible", "false");
+            patomandarim1.setAttribute("visible", "false");
+            patomandarim2.setAttribute("visible", "false");
+            patomandarim3.setAttribute("visible", "false");
+            patomandarim4.setAttribute("visible", "false");
+            patomandarim5.setAttribute("visible", "false");
+            patomandarim6.setAttribute("visible", "false");
+            patomandarim7.setAttribute("visible", "false");
+            patomandarim8.setAttribute("visible", "false");
+            patofilhote1.setAttribute("visible", "false");
+            patofilhote2.setAttribute("visible", "false");
+            patofilhote3.setAttribute("visible", "false");
+            Ornitorrinco1.setAttribute("visible", "false");
+            Ornitorrinco2.setAttribute("visible", "false");
+            Ornitorrinco3.setAttribute("visible", "false");
+            patoCinzento1.setAttribute("visible", "false");
+            patoCinzento2.setAttribute("visible", "false");
+            patoCinzento3.setAttribute("visible", "false");
+            patoCinzento4.setAttribute("visible", "false");
+
+            startTimer(10);
+            function startTimer(duration) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    if (--timer < 0) {
+                        localStorage.setItem("pontuacaoTelepata", pontuacao);
+                        window.location.reload();
+                    }
+                }, 1000)
+            }
+
+            // ----------------------------------Rodada7--------------------------------------------- //
+
+            setTimeout(function () {
+                patoreal5.setAttribute("position", "3.5 2.3 -15.4")
+                patoreal5.setAttribute("animation", "property: position; to: -4.5 2.3 -15.4; easing: linear; dur: 3000;")
+                patoreal5.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patoreal5.setAttribute("visible", "false");
+                    patoreal5.setAttribute("position", "2.5 0.8 100")
+                }, 3000);
+            }, 3000);
+            setTimeout(function () {
+                patoreal6.setAttribute("position", "3.5 2.3 -15")
+                patoreal6.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 5000;")
+                patoreal6.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patoreal6.setAttribute("visible", "false");
+                    patoreal6.setAttribute("position", "2.5 0.8 100")
+                }, 5000);
+            }, 3000);
+            setTimeout(function () {
+                patofilhote1.setAttribute("position", "3.5 1 -13.9")
+                patofilhote1.setAttribute("animation", "property: position; to: -4.5 1 -13.9; easing: linear; dur: 4500;")
+                patofilhote1.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patofilhote1.setAttribute("visible", "false");
+                    patofilhote1.setAttribute("position", "2.5 0.8 100")
+                }, 4500);
+            }, 3000);
+            setTimeout(function () {
+                patoCinzento4.setAttribute("position", "-4.5 1 -14.3")
+                patoCinzento4.setAttribute("animation", "property: position; to: 3.5 1 -14.3; easing: linear; dur: 4000;")
+                patoCinzento4.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patoCinzento4.setAttribute("visible", "false");
+                    patoCinzento4.setAttribute("position", "2.5 0.8 100")
+                }, 4000);
+            }, 3000);
+
+            // ----------------------------------Rodada8--------------------------------------------- //
+
+            setTimeout(function () {
+                patomandarim6.setAttribute("position", "3.5 2.3 -15")
+                patomandarim6.setAttribute("animation", "property: position; to: -4.5 2.3 -15; easing: linear; dur: 3000;")
+                patomandarim6.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patomandarim6.setAttribute("visible", "false");
+                    patomandarim6.setAttribute("position", "2.5 0.8 100")
+                }, 3000);
+            }, 7000);
+            setTimeout(function () {
+                patomandarim7.setAttribute("position", "3.5 1 -14.3")
+                patomandarim7.setAttribute("animation", "property: position; to: -4.5 1 -14.3; easing: linear; dur: 4000;")
+                patomandarim7.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patomandarim7.setAttribute("visible", "false");
+                    patomandarim7.setAttribute("position", "2.5 0.8 100")
+                }, 4000);
+            }, 7000);
+            setTimeout(function () {
+                patoripper1.setAttribute("position", "3.5 1 -13.9")
+                patoripper1.setAttribute("animation", "property: position; to: -4.5 1 -13.9; easing: linear; dur: 5000;")
+                patoripper1.setAttribute("visible", "true");
+                setTimeout(function () {
+                    patoripper1.setAttribute("visible", "false");
+                    patoripper1.setAttribute("position", "2.5 0.8 100")
+                }, 5000);
+            }, 7000);
+
+        }
+
+
+
+
+
+        // ----------------------------------Sistema de Click--------------------------------------------- //
+
+        AFRAME.registerComponent('click-listener', {
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    let getSelection = () => {
+                        let id = evt.target.id;
+                        return id;
+                    }
+
+                    let pato = document.getElementById(getSelection());
+                    pato.setAttribute("visible", "false");
+                    let patoId = pato.getAttribute("id");
+
+                    const patoNew = patoId.replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '');
+                    console.log(patoNew)
+
+                    if (patoNew == 'PatoReal') {
+                        pontuacao = pontuacao + 10;
+                    } else if (patoNew == 'Mandarim') {
+                        pontuacao = pontuacao + 10;
+                    } else if (patoNew == 'Filhote') {
+                        pontuacao = pontuacao + 20;
+                    } else if (patoNew == 'Ripper') {
+                        pontuacao = pontuacao - 10;
+                    } else if (patoNew == 'Ornitorrinco') {
+                        pontuacao = pontuacao + 30;
+                    }
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
