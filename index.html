@@ -47,14 +47,26 @@
       <img id="CenarioUm" src="./assets/img/CenarioUm.png" />
       <img id="CenarioDois" src="./assets/img/CenarioDois.png" />
       <img id="FundoBarraca" src="./assets/img/FundoBarraca.PNG" />
+      <img id="Titulo" src="./assets/img/Titulo.png" />
       <img id="mira" src="./assets/img/mira.png" />
     </a-assets>
 
 
 
-    <a-entity id="inicial" position="0 0 0">
+    <a-entity id="TituloPrincipal" position="0 0 0">
       <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal"
-        component-padding="0.1" opacity="0.7" width="6.5" height="6.5" panel-color="#072B73" panel-rounded="0.2"
+        component-padding="0.1" opacity="1" width="10" height="10" panel-color="#072B73" panel-rounded="0.2"
+        position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
+      <a-text position="-1.2 1.2 -4" color="#f4dacb" width="10" value="PATOMANIA"></a-text>
+      <a-image src="#Titulo" width="2.5" height="2.5" position="0 2 -5" rotation="0 0 0"></a-image>
+      <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26"
+        border-color="#c8272c" width="1.5" height="0.5" base-depth="0.025" depth="0.1" gap="0.1" border-radius="100"
+        onclick="openMenuInicial()" value="Começar" position="0 0.6 -4" font-size="0.1" margin="0 0 0.05 0"></a-gui-button>
+    </a-entity>
+
+    <a-entity id="inicial" visible="false" position="0 0 0">
+      <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal"
+        component-padding="0.1" opacity="1" width="6.5" height="6.5" panel-color="#072B73" panel-rounded="0.2"
         position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
       <a-text position="-0.65 2 -4" color="#f4dacb" value="PATOMANIA"></a-text>
       <a-gui-button active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb" background-color="#DE4F26"
@@ -67,7 +79,7 @@
 
     <a-entity id="menuFases" position="0 10 14" visible="false">
       <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal"
-        component-padding="0.1" opacity="0.7" width="6.5" height="9.5" panel-color="#072B73" panel-rounded="0.2"
+        component-padding="0.1" opacity="1" width="6.5" height="9.5" panel-color="#072B73" panel-rounded="0.2"
         position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
       <a-text position="-0.3 2.4 -4" color="#f4dacb" value="Fases"></a-text>
       <a-gui-button id="menuFases" active-color="#af3d1d" hover-color="#af3d1d" font-color="#f4dacb"
@@ -94,9 +106,9 @@
 
       <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzentoZ1" class="PatoCinzento→"
         animation="" scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzentoZ5" class="PatoCinzento→"
+      <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzentoZ5" class="PatoCinzento→"
         animation="" scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzentoZ6" class="PatoCinzento→"
+      <a-image click-listener position="2.5 0.8 100" src="#PatoCinzento←" id="PatoCinzentoZ6" class="PatoCinzento→"
         animation="" scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoRealZ1" class="PatoReal→" animation=""
         scale="3 3 3"></a-image>
@@ -106,7 +118,7 @@
         scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoReal→" id="PatoRealZ4" class="PatoReal←" animation=""
         scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoRealZ10" class="PatoReal←" animation=""
+      <a-image click-listener position="2.5 0.8 100" src="#PatoReal←" id="PatoRealZ10" class="PatoReal←" animation=""
         scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipperZ2" class="PatoRipper→"
         animation="" scale="3 3 3"></a-image>
@@ -161,7 +173,7 @@
         animation="" scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoRipper→" id="PatoRipperZ8" class="PatoRipper→"
         animation="" scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipperZ9" class="PatoRipper→"
+      <a-image click-listener position="2.5 0.8 100" src="#PatoRipper←" id="PatoRipperZ9" class="PatoRipper→"
         animation="" scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoMandarim←" id="PatoMandarimZ7" class="PatoMandarim→"
         animation="" scale="3 3 3"></a-image>
@@ -177,9 +189,9 @@
         animation="" scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhoteZ5" class="PatoFilhote→"
         animation="" scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhoteZ4" class="PatoFilhote→"
+      <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhoteZ4" class="PatoFilhote→"
         animation="" scale="3 3 3"></a-image>
-        <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhoteZ6" class="PatoFilhote→"
+      <a-image click-listener position="2.5 0.8 100" src="#PatoFilhote←" id="PatoFilhoteZ6" class="PatoFilhote→"
         animation="" scale="3 3 3"></a-image>
       <a-image click-listener position="2.5 0.8 100" src="#Ornitorrinco→" id="OrnitorrincoZ4" class="Ornitorrinco←"
         animation="" scale="3 3 3"></a-image>
@@ -374,6 +386,13 @@
   <script>
 
     let pontuacao = 0;
+
+    function openMenuInicial() {
+      document.getElementById('TituloPrincipal').setAttribute("visible", "false");
+      document.getElementById('TituloPrincipal').setAttribute("position", "0 10 14");
+      document.getElementById('inicial').setAttribute("position", "0 0 0");
+      document.getElementById('inicial').setAttribute("visible", "true");
+    }
 
     function closeMenuFases() {
       document.getElementById('menuFases').setAttribute("visible", "false");
