@@ -367,12 +367,12 @@
         }, 3500);
       }, 1500);
       setTimeout(function () {
-        patoreal7.setAttribute("position", "-4.5 1 -14.3")
-        patoreal7.setAttribute("animation", "property: position; to: 3.5 1 -14.3; easing: linear; dur: 3500;")
-        patoreal7.setAttribute("visible", "true");
+        patoCinzento2.setAttribute("position", "-4.5 1 -14.3")
+        patoCinzento2.setAttribute("animation", "property: position; to: 3.5 1 -14.3; easing: linear; dur: 3500;")
+        patoCinzento2.setAttribute("visible", "true");
         setTimeout(function () {
-          patoreal7.setAttribute("visible", "false");
-          patoreal7.setAttribute("position", "2.5 0.8 100")
+          patoCinzento2.setAttribute("visible", "false");
+          patoCinzento2.setAttribute("position", "2.5 0.8 100")
         }, 3500);
       }, 1000);
       setTimeout(function () {
@@ -384,15 +384,6 @@
           patomandarim3.setAttribute("position", "2.5 0.8 100")
         }, 2750);
       }, 2500);
-      setTimeout(function () {
-        patofilhote2.setAttribute("position", "3.5 1 -13.9")
-        patofilhote2.setAttribute("animation", "property: position; to: -4.5 1 -13.9; easing: linear; dur: 2750;")
-        patofilhote2.setAttribute("visible", "true");
-        setTimeout(function () {
-          patofilhote2.setAttribute("visible", "false");
-          patofilhote2.setAttribute("position", "2.5 0.8 100")
-        }, 2750);
-      }, 1000);
 
       // ----------------------------------Rodada2--------------------------------------------- //
 
@@ -517,12 +508,12 @@
       // ----------------------------------Rodada6--------------------------------------------- //
 
       setTimeout(function () {
-        patoCinzento2.setAttribute("position", "-4.5 2.3 -15")
-        patoCinzento2.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 3500;")
-        patoCinzento2.setAttribute("visible", "true");
+        patoreal7.setAttribute("position", "-4.5 2.3 -15")
+        patoreal7.setAttribute("animation", "property: position; to: 3.5 2.3 -15; easing: linear; dur: 3500;")
+        patoreal7.setAttribute("visible", "true");
         setTimeout(function () {
-          patoCinzento2.setAttribute("visible", "false");
-          patoCinzento2.setAttribute("position", "2.5 0.8 100")
+          patoreal7.setAttribute("visible", "false");
+          patoreal7.setAttribute("position", "2.5 0.8 100")
         }, 3500);
       }, 31000);
       setTimeout(function () {
@@ -989,20 +980,22 @@
           pato.setAttribute("visible", "false");
           let patoId = pato.getAttribute("id");
 
-          const patoNew = patoId.replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '');
+          const patoNew = patoId.replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('F', '');
           console.log(patoNew)
 
           if (patoNew == 'PatoReal') {
-            pontuacao = pontuacao + 10;
+            pontuacao = pontuacao + 100;
           } else if (patoNew == 'Mandarim') {
-            pontuacao = pontuacao + 10;
+            pontuacao = pontuacao + 100;
           } else if (patoNew == 'Filhote') {
-            pontuacao = pontuacao + 20;
+            pontuacao = pontuacao + 200;
           } else if (patoNew == 'Ripper') {
-            pontuacao = pontuacao - 10;
+            pontuacao = pontuacao - 200;
           } else if (patoNew == 'Ornitorrinco') {
-            pontuacao = pontuacao + 30;
-          }
+            pontuacao = pontuacao + 300;
+          } else if (patoNew == 'Cinzento') {
+            pontuacao = pontuacao - 300;
+          } 
         });
       }
     });
