@@ -419,7 +419,8 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__mouseenter="_event: mouseenter; color: springgreen"
           event-set__mouseleave="_event: mouseleave; color: black"></a-cursor>
-        <a-image mindar-image-target="targetIndex: 0" id="miraOptica" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
+          <a-entity mindar-image-target="targetIndex: 0"></a-entity>
+        <a-image id="miraOp" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
       </a-camera>
     </a-entity>
 
@@ -427,15 +428,17 @@
 
   <script>
 
-    addEventListener("targetFound", function (ev) {
-      alert("Target Found");
-    });
-
     let faseLocal = 0;
+    let miraTrade = 1;
     let pontuacaoPatocidio = 0;
     let pontuacaoPsicopata = 0;
     let pontuacaoTelepata = 0;
 
+    addEventListener("targetFound", function (ev) {
+      if (miraTrade == 1) {
+        document.getElementById('miraOp').setAttribute("visible", "true");
+      }
+    });
 
     function resetarPagina() {
       window.location.reload();
