@@ -21,14 +21,16 @@
 
 <body>
 
+<a-scene  mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 2" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
+  <a-entity mindar-image-target="targetIndex: 0">
+    <a-plane src="#PatoReal←" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+  </a-entity>
 
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" class="scene" embedded vr-mode-ui="enabled: false"
+</a-scene>
+
+  <a-scene embedded vr-mode-ui="enabled: false"
     arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
-
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-plane src="#PatoReal←" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-    </a-entity>
 
     <a-assets>
       <audio id="click-sound" crossorigin="anonymous"
