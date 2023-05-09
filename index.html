@@ -419,10 +419,10 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__mouseenter="_event: mouseenter; color: springgreen"
           event-set__mouseleave="_event: mouseleave; color: black"></a-cursor>
-        <a-image id="miraOptica1" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
-        <a-image id="miraOptica2" width="0.05" height="0.05" src="#mira2" position="0 0 -.99"></a-image>
-        <a-image id="miraOptica3" width="0.05" height="0.05" src="#mira3" position="0 0 -.99"></a-image>
-        <a-image id="miraOptica4" width="0.05" height="0.05" src="#mira4" position="0 0 -.99"></a-image>
+        <a-image visible="true" id="miraOptica1" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
+        <a-image visible="false" id="miraOptica2" width="0.05" height="0.05" src="#mira2" position="0 0 -.99"></a-image>
+        <a-image visible="false" id="miraOptica3" width="0.05" height="0.05" src="#mira3" position="0 0 -.99"></a-image>
+        <a-image visible="false" id="miraOptica4" width="0.05" height="0.05" src="#mira4" position="0 0 -.99"></a-image>
       </a-camera>
     </a-entity>
 
@@ -442,21 +442,25 @@
         document.getElementById('miraOptica2').setAttribute("visible", "false");
         document.getElementById('miraOptica3').setAttribute("visible", "false");
         document.getElementById('miraOptica4').setAttribute("visible", "false");
+        miraTrade = 2;
       } else if (miraTrade == 2) {
         document.getElementById('miraOptica1').setAttribute("visible", "false");
         document.getElementById('miraOptica2').setAttribute("visible", "true");
         document.getElementById('miraOptica3').setAttribute("visible", "false");
         document.getElementById('miraOptica4').setAttribute("visible", "false");
+        miraTrade = 3;
       } else if (miraTrade == 3) {
         document.getElementById('miraOptica1').setAttribute("visible", "false");
         document.getElementById('miraOptica2').setAttribute("visible", "false");
         document.getElementById('miraOptica3').setAttribute("visible", "true");
         document.getElementById('miraOptica4').setAttribute("visible", "false");
+        miraTrade = 4;
       } else if (miraTrade == 4) {
         document.getElementById('miraOptica1').setAttribute("visible", "false");
         document.getElementById('miraOptica2').setAttribute("visible", "false");
         document.getElementById('miraOptica3').setAttribute("visible", "false");
         document.getElementById('miraOptica4').setAttribute("visible", "true");
+        miraTrade = 1;
       }
     });
 
