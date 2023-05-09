@@ -50,12 +50,11 @@
       <img id="Refresh" src="./assets/img/refreshIcon.jpg" />
       <img id="Termica" src="./assets/img/Termica.PNG" />
       <img id="mira" src="./assets/img/mira.png" />
+      <img id="mira2" src="./assets/img/mira2.png" />
+      <img id="mira3" src="./assets/img/mira3.png" />
+      <img id="mira4" src="./assets/img/mira4.png" />
       <img id="Marker" src="./assets/img/Marker.patt" />
     </a-assets>
-
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-plane src="#PatoReal" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-    </a-entity>
 
     <a-entity id="TituloPrincipal" position="0 0 0">
       <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal"
@@ -420,7 +419,7 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__mouseenter="_event: mouseenter; color: springgreen"
           event-set__mouseleave="_event: mouseleave; color: black"></a-cursor>
-        <a-image width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
+        <a-image id="miraOptica" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
       </a-camera>
     </a-entity>
 
@@ -429,7 +428,7 @@
   <script>
 
     addEventListener("targetFound", function (ev) {
-      alert("targetFound");
+      document.getElementById('miraOptica').setAttribute("src", "#mira2");
     });
 
     let faseLocal = 0;
