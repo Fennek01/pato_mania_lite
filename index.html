@@ -48,7 +48,8 @@
       <img id="CenarioDois" src="./assets/img/CenarioDois.png" />
       <img id="FundoBarraca" src="./assets/img/FundoBarraca.PNG" />
       <img id="Titulo" src="./assets/img/Titulo.png" />
-      <img id="Refresh" src="./assets/img/refreshIcon.jpg" />
+      <img id="Refresh" src="./assets/img/refreshIcon.jpg"/>
+      <img id="Termica" src="./assets/img/Termica.png" />
       <img id="mira" src="./assets/img/mira.png" />
     </a-assets>
 
@@ -112,14 +113,24 @@
       <a-gui-flex-container panel-color="#90022d" flex-direction="column" justify-content="center" align-items="normal"
         component-padding="0.1" opacity="1" width="6.5" height="9.5" panel-color="#072B73" panel-rounded="0.2"
         position="0 0.8 -14" rotation="0 0 0"></a-gui-flex-container>
-        <a-text width="2.5" position="-0.5 2 -4" color="#f4dacb" value="Patocidio -"></a-text>
-        <a-text width="2.5" position="-0.5 1.6 -4" color="#f4dacb" value="Psicopata -"></a-text>        
-        <a-text width="2.5" position="-0.5 1.2 -4" color="#f4dacb" value="Telepata -"></a-text>
+      <a-text width="2.5" position="-0.5 2 -4" color="#f4dacb" value="Patocidio -"></a-text>
+      <a-text width="2.5" position="-0.5 1.6 -4" color="#f4dacb" value="Psicopata -"></a-text>
+      <a-text width="2.5" position="-0.5 1.2 -4" color="#f4dacb" value="Telepata -"></a-text>
       <a-text position="-0.35 2.4 -4" color="#f4dacb" value="Placar"></a-text>
-      <a-text height="2.5" width="2.5" position="0.48 2.28 -3" color="#f4dacb" value="X"></a-text>
+      <a-text height="2.5"   width="2.5" position="0.48 2.28 -3" color="#f4dacb" value="X"></a-text>
       <a-gui-icon-button height="0.2" onclick="closeMenuPontuacao()" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
         background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
         position="0.7 2.5 -4"></a-gui-icon-button>
+      <a-gui-icon-button height="0.1" onclick="" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
+        background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
+        position="-0.7 1.2 -4"></a-gui-icon-button>
+      <a-gui-icon-button height="0.1" onclick="" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
+        background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
+        position="-0.7 1.6 -4"></a-gui-icon-button>
+      <a-gui-icon-button height="0.1" onclick="" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
+        background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
+        position="-0.7 2 -4"></a-gui-icon-button>
+      <a-image src="#Termica" class="Termica" id="Termica" position="0 -0.8 -10" scale="3 3 3"></a-image>
     </a-entity>
 
     <a-entity id="Patocidio" position="0 0.8 50" visible="false">
