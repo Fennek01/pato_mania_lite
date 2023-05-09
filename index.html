@@ -52,10 +52,15 @@
       <img id="Refresh" src="./assets/img/refreshIcon.jpg" />
       <img id="Termica" src="./assets/img/Termica.PNG" />
       <img id="mira" src="./assets/img/mira.png" />
+      <img id="Marker" src="./assets/img/Marker.patt" />
     </a-assets>
 
-    <a-marker preset="hiro">
-      <a-box position="0 0.5 0" material="color: red;"></a-box>
+    <a-marker preset="custom" type="pattern" src="#Marker">
+      <a-entity
+        gltf-model="modelo.gltf"
+        scale="0.5 0.5 0.5"
+        position="0 0 0"
+      ></a-entity>
     </a-marker>
     <a-entity camera></a-entity>
 
