@@ -53,6 +53,7 @@
       <img id="mira2" src="./assets/img/mira2.png" />
       <img id="mira3" src="./assets/img/mira3.png" />
       <img id="mira4" src="./assets/img/mira4.png" />
+      <img id="AcabouTempo" src="./assets/img/AcabouTempo.PNG" />
       <img id="Marker" src="./assets/img/Marker.patt" />
     </a-assets>
 
@@ -140,13 +141,7 @@
       <a-image src="#Termica" position="0 -0.8 -10" scale="3 3 3"></a-image>
     </a-entity>
 
-    <a-marker preset="custom" type="pattern" src="MarkerP.patt">
-      <a-entity>
-        <a-image src="#PatoCinzento←" id="PatoCinzentoZ1" class="PatoCinzento→" animation="" scale="3 3 3"></a-image>
-      </a-entity>
-    </a-marker>
-    <a-entity camera></a-entity>
-
+    <a-image visible="false" src="#AcabouTempo" id="AcabouTempoImg" position="0 0 100" scale="12 12 12"></a-image>
 
     <a-entity id="Patocidio" position="0 0.8 50" visible="false">
       <a-image src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -19" scale="12 12 12"></a-image>
@@ -612,7 +607,7 @@
       patoCinzento5.setAttribute("visible", "false");
       patoCinzento6.setAttribute("visible", "false");
 
-      startTimer(48);
+      startTimer(5);
       function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -622,7 +617,13 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoPatocidio", pontuacaoPatocidio);
-            window.location.reload();
+            document.getElementById('Patocidio').setAttribute("position", "0 100 0");
+            document.getElementById('Patocidio').setAttribute("visible", "false");
+            document.getElementById('AcabouTempoImg').setAttribute("position", "0 0 -10");
+            document.getElementById('AcabouTempoImg').setAttribute("visible", "true");
+            setInterval(function () {
+              window.location.reload();
+            }, 3000)
           }
         }, 1000)
       }
