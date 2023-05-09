@@ -141,7 +141,7 @@
         background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
         position="-0.7 2 -4"></a-gui-icon-button>
       <a-image src="#Termica" position="0 -0.8 -10" scale="3 3 3"></a-image>
-      <a-image visible="true" src="#Verificado" id="TotalVerificado" position="0.8 -0.7 -8" scale="1 1 1"></a-image>
+      <a-image visible="false" src="#Verificado" id="TotalVerificado" position="0.8 -0.7 -8" scale="1 1 1"></a-image>
     </a-entity>
 
     <a-image visible="false" src="#AcabouTempo" id="AcabouTempoImg" position="0 0 100" scale="12 12 12"></a-image>
@@ -493,7 +493,7 @@
       Total = parseInt(pontuacaoPatocidio) + parseInt(pontuacaoPsicopata) + parseInt(pontuacaoTelepata);
 
       if (Total == 5000) {
-        var TotalScore = document.getElementById('TotalScore');
+        document.getElementById('TotalVerificado').setAttribute("visible", "true")
       } 
 
     }
