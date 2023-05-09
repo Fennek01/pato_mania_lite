@@ -438,10 +438,11 @@
 
     addEventListener("targetFound", function (ev) {
       
-        document.getElementById('miraOptica1').setAttribute("visible", "true");
+        document.getElementById('miraOptica1').setAttribute("visible", "false");
         document.getElementById('miraOptica2').setAttribute("visible", "false");
         document.getElementById('miraOptica3').setAttribute("visible", "false");
         document.getElementById('miraOptica4').setAttribute("visible", "false");
+        alert("Você perdeu!");
         
     });
 
