@@ -21,8 +21,9 @@
 
 <body>
 
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind; uiError:no; uiLoading:no; uiScanning:no" embedded vr-mode-ui="enabled: false"
-    arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix" >
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind; uiError:no; uiLoading:no; uiScanning:no" embedded
+    vr-mode-ui="enabled: false"
+    arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
 
     <a-assets>
       <audio id="click-sound" crossorigin="anonymous"
@@ -414,11 +415,15 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__mouseenter="_event: mouseenter; color: springgreen"
           event-set__mouseleave="_event: mouseleave; color: black"></a-cursor>
-          <a-entity mindar-image-target="targetIndex: 0"></a-entity>
-        <a-image id="miraOp1" visible="true" id="miraOptica" width="0.05" height="0.05" src="#mira" position="0 0 -.99"></a-image>
-        <a-image id="miraOp2" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira2" position="0 0 -.99"></a-image>
-        <a-image id="miraOp3" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira3" position="0 0 -.99"></a-image>
-        <a-image id="miraOp4" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira4" position="0 0 -.99"></a-image>
+        <a-entity mindar-image-target="targetIndex: 0"></a-entity>
+        <a-image id="miraOp1" visible="true" id="miraOptica" width="0.05" height="0.05" src="#mira"
+          position="0 0 -.99"></a-image>
+        <a-image id="miraOp2" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira2"
+          position="0 0 -.99"></a-image>
+        <a-image id="miraOp3" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira3"
+          position="0 0 -.99"></a-image>
+        <a-image id="miraOp4" visible="false" id="miraOptica" width="0.05" height="0.05" src="#mira4"
+          position="0 0 -.99"></a-image>
       </a-camera>
     </a-entity>
 
@@ -607,7 +612,7 @@
       patoCinzento5.setAttribute("visible", "false");
       patoCinzento6.setAttribute("visible", "false");
 
-      startTimer(5);
+      startTimer(48);
       function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -619,7 +624,7 @@
             localStorage.setItem("pontuacaoPatocidio", pontuacaoPatocidio);
             document.getElementById('Patocidio').setAttribute("position", "0 100 0");
             document.getElementById('Patocidio').setAttribute("visible", "false");
-            document.getElementById('AcabouTempoImg').setAttribute("position", "0 0 -19");
+            document.getElementById('AcabouTempoImg').setAttribute("position", "0 0 -20");
             document.getElementById('AcabouTempoImg').setAttribute("visible", "true");
             setInterval(function () {
               window.location.reload();
@@ -1113,7 +1118,13 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoPsicopata", pontuacaoPsicopata);
-            window.location.reload();
+            document.getElementById('Psicopata').setAttribute("position", "0 100 0");
+            document.getElementById('Psicopata').setAttribute("visible", "false");
+            document.getElementById('AcabouTempoImg').setAttribute("position", "0 0 -20");
+            document.getElementById('AcabouTempoImg').setAttribute("visible", "true");
+            setInterval(function () {
+              window.location.reload();
+            }, 3000)
           }
         }, 1000)
       }
@@ -1517,7 +1528,13 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoTelepata", pontuacaoTelepata);
-            window.location.reload();
+            document.getElementById('Telepata').setAttribute("position", "0 100 0");
+            document.getElementById('Telepata').setAttribute("visible", "false");
+            document.getElementById('AcabouTempoImg').setAttribute("position", "0 0 -20");
+            document.getElementById('AcabouTempoImg').setAttribute("visible", "true");
+            setInterval(function () {
+              window.location.reload();
+            }, 3000)
           }
         }, 1000)
       }
