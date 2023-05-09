@@ -48,7 +48,7 @@
       <img id="CenarioDois" src="./assets/img/CenarioDois.png" />
       <img id="FundoBarraca" src="./assets/img/FundoBarraca.PNG" />
       <img id="Titulo" src="./assets/img/Titulo.png" />
-      <img id="Refresh" src="./assets/img/refreshIcon.jpg"/>
+      <img id="Refresh" src="./assets/img/refreshIcon.jpg" />
       <img id="Termica" src="./assets/img/Termica.PNG" />
       <img id="mira" src="./assets/img/mira.png" />
     </a-assets>
@@ -116,8 +116,12 @@
       <a-text width="2.5" position="-0.5 2 -4" color="#f4dacb" value="Patocidio -"></a-text>
       <a-text width="2.5" position="-0.5 1.6 -4" color="#f4dacb" value="Psicopata -"></a-text>
       <a-text width="2.5" position="-0.5 1.2 -4" color="#f4dacb" value="Telepata -"></a-text>
+      <a-text width="2.5" position="0 2 -4" color="#f4dacb" id="PatocidioScore"></a-text>
+      <a-text width="2.5" position="0 1.6 -4" color="#f4dacb" id="PsicopataScore"></a-text>
+      <a-text width="2.5" position="0 1.2 -4" color="#f4dacb" id="TelepataScore"></a-text>
       <a-text position="-0.35 2.4 -4" color="#f4dacb" value="Placar"></a-text>
-      <a-text height="2.5"   width="2.5" position="0.48 2.28 -3" color="#f4dacb" value="X"></a-text>
+      <a-text height="2.5" width="2.5" position="0.48 2.28 -3" color="#f4dacb" value="X"></a-text>
+      <a-text height="5.5" width="5.5" position="-0.3 0.7 -3" color="#f4dacb" value="5000"></a-text>
       <a-gui-icon-button height="0.2" onclick="closeMenuPontuacao()" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
         background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
         position="0.7 2.5 -4"></a-gui-icon-button>
@@ -130,7 +134,7 @@
       <a-gui-icon-button height="0.1" onclick="" icon="a" margin="0 0 0.05 0" border-color="#DE4F26"
         background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
         position="-0.7 2 -4"></a-gui-icon-button>
-      <a-image src="#Termica"  position="0 -0.8 -10" scale="3 3 3"></a-image>
+      <a-image src="#Termica" position="0 -0.8 -10" scale="3 3 3"></a-image>
     </a-entity>
 
     <a-entity id="Patocidio" position="0 0.8 50" visible="false">
@@ -423,6 +427,7 @@
     let pontuacaoPsicopata = 0;
     let pontuacaoTelepata = 0;
 
+
     function resetarPagina() {
       window.location.reload();
     }
@@ -568,6 +573,9 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoPatocidio", pontuacaoPatocidio);
+            var pontuacaoPatocidio = localStorage.getItem("pontuacaoPatocidio");
+            var PatocidioScore = document.getElementById('PatocidioScore');
+            PatocidioScore.setAttribute('value', pontuacaoPatocidio);
             window.location.reload();
           }
         }, 1000)
@@ -1058,6 +1066,9 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoPsicopata", pontuacaoPsicopata);
+            var pontuacaoPsicopata = localStorage.getItem("pontuacaoPsicopata");
+            var PsicopataScore = document.getElementById('PatocidioScore');
+            PsicopataScore.setAttribute('value', pontuacaoPsicopata);
             window.location.reload();
           }
         }, 1000)
@@ -1462,6 +1473,9 @@
           seconds = seconds < 10 ? "0" + seconds : seconds;
           if (--timer < 0) {
             localStorage.setItem("pontuacaoTelepata", pontuacaoTelepata);
+            var pontuacaoTelepata = localStorage.getItem("pontuacaoTelepata");
+            var TelepataScore = document.getElementById('TelepataScore');
+            TelepataScore.setAttribute('value', pontuacaoTelepata);
             window.location.reload();
           }
         }, 1000)
