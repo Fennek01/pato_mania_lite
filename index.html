@@ -55,6 +55,7 @@
       <img id="mira3" src="./assets/img/mira3.png" />
       <img id="mira4" src="./assets/img/mira4.png" />
       <img id="AcabouTempo" src="./assets/img/AcabouTempo.PNG" />
+      <img id="Verificado" src="./assets/img/Verificado.png" />
       <img id="Marker" src="./assets/img/Marker.patt" />
     </a-assets>
 
@@ -140,6 +141,7 @@
         background-color="#c8272c" hover-color="#af3d1d" active-color="#af3d1d"
         position="-0.7 2 -4"></a-gui-icon-button>
       <a-image src="#Termica" position="0 -0.8 -10" scale="3 3 3"></a-image>
+      <a-image visible="true" src="#Verificado" id="TotalVerificado" position="0.8 -0.7 -8" scale="1 1 1"></a-image>
     </a-entity>
 
     <a-image visible="false" src="#AcabouTempo" id="AcabouTempoImg" position="0 0 100" scale="12 12 12"></a-image>
@@ -433,6 +435,7 @@
 
     let faseLocal = 0;
     let miraTrade = 2;
+    var Total = 0;
     let pontuacaoPatocidio = 0;
     let pontuacaoPsicopata = 0;
     let pontuacaoTelepata = 0;
@@ -486,6 +489,13 @@
       var pontuacaoTelepata = localStorage.getItem("pontuacaoTelepata");
       var TelepataScore = document.getElementById('TelepataScore');
       TelepataScore.setAttribute('value', pontuacaoTelepata);
+
+      Total = parseInt(pontuacaoPatocidio) + parseInt(pontuacaoPsicopata) + parseInt(pontuacaoTelepata);
+
+      if (Total == 5000) {
+        var TotalScore = document.getElementById('TotalScore');
+      } 
+
     }
 
     function closeMenuPontuacao() {
