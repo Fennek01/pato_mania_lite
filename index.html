@@ -55,6 +55,57 @@
       <img id="mira3" src="./assets/img/mira3.png" />
       <img id="mira4" src="./assets/img/mira4.png" />
       <img id="AcabouTempo" src="./assets/img/AcabouTempo.PNG" />
+      <img id="50" src="./assets/img/Timer (1).PNG" />
+      <img id="49" src="./assets/img/Timer (2).PNG" />
+      <img id="48" src="./assets/img/Timer (3).PNG" />
+      <img id="47" src="./assets/img/Timer (4).PNG" />
+      <img id="46" src="./assets/img/Timer (5).PNG" />
+      <img id="45" src="./assets/img/Timer (6).PNG" />
+      <img id="44" src="./assets/img/Timer (7).PNG" />
+      <img id="43" src="./assets/img/Timer (8).PNG" />
+      <img id="42" src="./assets/img/Timer (9).PNG" />
+      <img id="41" src="./assets/img/Timer (10).PNG" />
+      <img id="40" src="./assets/img/Timer (11).PNG" />
+      <img id="39" src="./assets/img/Timer (12).PNG" />
+      <img id="38" src="./assets/img/Timer (13).PNG" />
+      <img id="37" src="./assets/img/Timer (14).PNG" />
+      <img id="36" src="./assets/img/Timer (15).PNG" />
+      <img id="35" src="./assets/img/Timer (16).PNG" />
+      <img id="34" src="./assets/img/Timer (17).PNG" />
+      <img id="33" src="./assets/img/Timer (18).PNG" />
+      <img id="32" src="./assets/img/Timer (19).PNG" />
+      <img id="31" src="./assets/img/Timer (20).PNG" />
+      <img id="30" src="./assets/img/Timer (21).PNG" />
+      <img id="29" src="./assets/img/Timer (22).PNG" />
+      <img id="28" src="./assets/img/Timer (23).PNG" />
+      <img id="27" src="./assets/img/Timer (24).PNG" />
+      <img id="26" src="./assets/img/Timer (25).PNG" />
+      <img id="25" src="./assets/img/Timer (26).PNG" />
+      <img id="24" src="./assets/img/Timer (27).PNG" />
+      <img id="23" src="./assets/img/Timer (28).PNG" />
+      <img id="22" src="./assets/img/Timer (29).PNG" />
+      <img id="21" src="./assets/img/Timer (30).PNG" />
+      <img id="20" src="./assets/img/Timer (31).PNG" />
+      <img id="19" src="./assets/img/Timer (32).PNG" />
+      <img id="18" src="./assets/img/Timer (33).PNG" />
+      <img id="17" src="./assets/img/Timer (34).PNG" />
+      <img id="16" src="./assets/img/Timer (35).PNG" />
+      <img id="15" src="./assets/img/Timer (36).PNG" />
+      <img id="14" src="./assets/img/Timer (37).PNG" />
+      <img id="13" src="./assets/img/Timer (38).PNG" />
+      <img id="12" src="./assets/img/Timer (39).PNG" />
+      <img id="11" src="./assets/img/Timer (40).PNG" />
+      <img id="10" src="./assets/img/Timer (41).PNG" />
+      <img id="9" src="./assets/img/Timer (42).PNG" />
+      <img id="8" src="./assets/img/Timer (43).PNG" />
+      <img id="7" src="./assets/img/Timer (44).PNG" />
+      <img id="6" src="./assets/img/Timer (45).PNG" />
+      <img id="5" src="./assets/img/Timer (46).PNG" />
+      <img id="4" src="./assets/img/Timer (47).PNG" />
+      <img id="3" src="./assets/img/Timer (48).PNG" />
+      <img id="2" src="./assets/img/Timer (49).PNG" />
+      <img id="1" src="./assets/img/Timer (50).PNG" />
+      <img id="0" src="./assets/img/Timer (51).PNG" />
       <img id="Verificado" src="./assets/img/Verificado.png" />
       <img id="Marker" src="./assets/img/Marker.patt" />
     </a-assets>
@@ -247,8 +298,8 @@
         scale="12 12 12"></a-image>
       <a-image src="#ParteSuperiorBarraca" class="ParteSuperiorBarraca" id="Barraca" position="-0.1 9 -14"
         scale="12 12 12"></a-image>
+        <a-image src="#50" position="0 -1.5 -11" scale="1.5 1.5 1.5"></a-image>
     </a-entity>
-
 
     <a-entity id="Psicopata" position="0 0.8 50" visible="false">
       <a-image src="#FundoBarraca" class="Barraca" id="Barraca" position="0 1 -19" scale="12 12 12"></a-image>
@@ -622,7 +673,7 @@
       patoCinzento5.setAttribute("visible", "false");
       patoCinzento6.setAttribute("visible", "false");
 
-      startTimer(48);
+      startTimer(50);
       function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -630,6 +681,7 @@
           seconds = parseInt(timer % 60, 10);
           minutes = minutes < 10 ? "0" + minutes : minutes;
           seconds = seconds < 10 ? "0" + seconds : seconds;
+          
           if (--timer < 0) {
             localStorage.setItem("pontuacaoPatocidio", pontuacaoPatocidio);
             document.getElementById('Patocidio').setAttribute("position", "0 100 0");
@@ -1118,7 +1170,7 @@
       patoCinzento3.setAttribute("visible", "false");
       patoCinzento4.setAttribute("visible", "false");
 
-      startTimer(48);
+      startTimer(50);
       function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -1528,7 +1580,7 @@
       patoCinzento3.setAttribute("visible", "false");
       patoCinzento4.setAttribute("visible", "false");
 
-      startTimer(48);
+      startTimer(50);
       function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
@@ -1880,6 +1932,10 @@
         });
       }
     });
+
+    // ----------------------------------Sistema de Timer--------------------------------------------- //
+
+    
 
   </script>
 
