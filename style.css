@@ -1,3 +1,10 @@
 #PatoReal {
     opacity: 0;
 }
+
+/* Desativa o zoom em dispositivos móveis */
+@viewport {
+    zoom: 1.0 !important;
+    min-zoom: 1.0 !important;
+    max-zoom: 1.0 !important;
+}
