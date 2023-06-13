@@ -326,9 +326,6 @@
       <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.6" scale="12 12 12"></a-image>
       <a-image src="#ParteInferiorBarraca" class="FundoBarraca" id="Barraca" position="0 -6 -13"
         scale="12 12 12"></a-image>
-      <a-image src="#CenarioDois" class="CenarioDois" id="Barraca" position="0.1 -5.4 -13.5" scale="12 12 12"></a-image>
-      <a-image src="#ParteInferiorBarraca" class="FundoBarraca" id="Barraca" position="0 -6 -13"
-        scale="12 12 12"></a-image>
       <a-image src="#ParteSuperiorBarraca" class="ParteSuperiorBarraca" id="Barraca" position="-0.1 9 -14"
         scale="12 12 12"></a-image>
     </a-entity>
@@ -1838,15 +1835,15 @@
           if (patoId.includes("Y")) {
             const patoNew = patoId.replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('F', '').replace('Z', '').replace('Y', '');
             if (patoNew == 'PatoReal') {
-              pontuacaoTelepata = pontuacaoTelepata + 100;
+              pontuacaoTelepata = pontuacaoTelepata - 100;
             } else if (patoNew == 'PatoMandarim') {
-              pontuacaoTelepata = pontuacaoTelepata + 100;
+              pontuacaoTelepata = pontuacaoTelepata - 100;
             } else if (patoNew == 'PatoFilhote') {
               pontuacaoTelepata = pontuacaoTelepata + 200;
             } else if (patoNew == 'PatoRipper') {
               pontuacaoTelepata = pontuacaoTelepata - 200;
             } else if (patoNew == 'Ornitorrinco') {
-              pontuacaoTelepata = pontuacaoTelepata + 300;
+              pontuacaoTelepata = pontuacaoTelepata * 300;
             } else if (patoNew == 'PatoCinzento') {
               pontuacaoTelepata = pontuacaoTelepata - 300;
             }
@@ -1857,26 +1854,26 @@
             } else if (patoNew == 'PatoMandarim') {
               pontuacaoPsicopata = pontuacaoPsicopata + 100;
             } else if (patoNew == 'PatoFilhote') {
-              pontuacaoPsicopata = pontuacaoPsicopata + 200;
+              pontuacaoPsicopata = pontuacaoPsicopata / 200;
             } else if (patoNew == 'PatoRipper') {
               pontuacaoPsicopata = pontuacaoPsicopata - 200;
             } else if (patoNew == 'PatoOrnitorrinco') {
-              pontuacaoPsicopata = pontuacaoPsicopata + 300;
+              pontuacaoPsicopata = pontuacaoPsicopata - 300;
             } else if (patoNew == 'PatoCinzento') {
               pontuacaoPsicopata = pontuacaoPsicopata - 300;
             }
           } else if (patoId.includes("Z")) {
             const patoNew = patoId.replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('F', '').replace('Z', '').replace('Y', '');
             if (patoNew == 'PatoReal') {
-              pontuacaoPatocidio = pontuacaoPatocidio + 100;
+              pontuacaoPatocidio = pontuacaoPatocidio * 100;
             } else if (patoNew == 'PatoMandarim') {
-              pontuacaoPatocidio = pontuacaoPatocidio + 100;
+              pontuacaoPatocidio = pontuacaoPatocidio - 100;
             } else if (patoNew == 'PatoFilhote') {
               pontuacaoPatocidio = pontuacaoPatocidio + 200;
             } else if (patoNew == 'PatoRipper') {
-              pontuacaoPatocidio = pontuacaoPatocidio - 200;
+              pontuacaoPatocidio = pontuacaoPatocidio + 200;
             } else if (patoNew == 'Ornitorrinco') {
-              pontuacaoPatocidio = pontuacaoPatocidio + 300;
+              pontuacaoPatocidio = pontuacaoPatocidio - 300;
             } else if (patoNew == 'PatoCinzento') {
               pontuacaoPatocidio = pontuacaoPatocidio - 300;
             }
